@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en" data-theme="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Navigation | Goodform</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <header>
+      <!-- Main navigation -->
+      <nav aria-label="Main navigation" class="navbar bg-base-100 px-4 shadow-sm sm:px-8">
+        <div class="navbar-start">
+          <a href="#" class="btn btn-ghost text-xl font-bold tracking-tight">goodform</a>
+        </div>
+
+        <!-- Desktop navigation links -->
+        <div class="navbar-center hidden md:flex">
+          <ul class="menu menu-horizontal px-1">
+            <li><a href="#work">What we do</a></li>
+            <li><a href="#studio">The studio</a></li>
+            <li><a href="#notes">Notes</a></li>
+          </ul>
+        </div>
+
+        <div class="navbar-end gap-2">
+          <a
+            href="/cart"
+            class="btn btn-ghost btn-circle"
+            aria-label="Shopping cart, 0 items"
+          >
+            <span class="indicator">
+              <span aria-hidden="true" class="indicator-item badge badge-primary badge-sm">0</span>
+              <img src="./assets/cart.svg" alt="" class="size-5" aria-hidden="true" />
+            </span>
+          </a>
+          <a href="mailto:hello@goodform.studio" class="btn btn-primary hidden sm:inline-flex">
+            Get in touch
+          </a>
+          <details class="dropdown dropdown-end md:hidden">
+            <summary class="btn btn-ghost btn-square list-none" aria-label="Navigation menu">
+              <img src="./assets/menu.svg" alt="" class="size-6" aria-hidden="true" />
+            </summary>
+            <!-- Mobile navigation links -->
+            <ul
+              class="menu dropdown-content z-10 mt-3 w-56 rounded-box bg-base-100 p-2 shadow"
+            >
+              <li><a href="#work">What we do</a></li>
+              <li><a href="#studio">The studio</a></li>
+              <li><a href="#notes">Notes</a></li>
+              <li class="sm:hidden">
+                <a href="mailto:hello@goodform.studio" class="text-primary">Get in touch</a>
+              </li>
+            </ul>
+          </details>
+        </div>
+      </nav>
+    </header>
+    <!-- Breadcrumb trail -->
+    <nav aria-label="Breadcrumbs" class="mx-auto max-w-7xl px-4 py-3 sm:px-8">
+      <div class="breadcrumbs text-sm">
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./products.html">Products</a></li>
+          <li aria-current="page"><span>New arrivals</span></li>
+        </ul>
+      </div>
+    </nav>
+  </body>
+</html>
