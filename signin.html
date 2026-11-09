@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en" data-theme="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Sign in to your Goodform account." />
+    <title>Sign in | Goodform</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="flex min-h-screen flex-col bg-base-200 text-base-content">
+    <header>
+      <nav aria-label="Main navigation" class="navbar bg-base-100 px-4 shadow-sm sm:px-8">
+        <div class="navbar-start">
+          <a href="./index.html" class="btn btn-ghost text-xl font-bold tracking-tight">goodform</a>
+        </div>
+        <div class="navbar-end">
+          <a href="./products.html" class="btn btn-ghost">Shop products</a>
+        </div>
+      </nav>
+    </header>
+
+    <nav aria-label="Breadcrumbs" class="mx-auto w-full max-w-6xl px-4 py-3 sm:px-8">
+      <div class="breadcrumbs text-sm">
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li aria-current="page"><span>Sign in</span></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="grid flex-1 place-items-center px-4 py-10">
+      <section aria-labelledby="login-title" class="card w-full max-w-md bg-base-100 shadow-xl">
+        <div class="card-body gap-5 p-6 sm:p-8">
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-[0.16em] text-primary">Welcome back</p>
+            <h1 id="login-title" class="mt-2 text-3xl font-bold tracking-tight">Sign in</h1>
+            <p class="mt-2 text-base-content/70">Sign in to your Goodform account.</p>
+          </div>
+
+          <form id="login-form" class="flex flex-col gap-5">
+            <label class="form-control flex w-full flex-col gap-2">
+              <span class="label-text font-medium">Email address</span>
+              <input
+                type="email"
+                name="email"
+                autocomplete="email"
+                placeholder="you@example.com"
+                class="input input-bordered w-full"
+                required
+              />
+            </label>
+
+            <label class="form-control flex w-full flex-col gap-2">
+              <span class="label-text font-medium">Password</span>
+              <input
+                type="password"
+                name="password"
+                autocomplete="current-password"
+                placeholder="Enter your password"
+                class="input input-bordered w-full"
+                required
+              />
+            </label>
+
+            <button type="submit" class="btn btn-primary w-full">Sign in</button>
+            <p id="login-message" class="text-sm text-base-content/70" aria-live="polite">
+              Sign-in is a demo only and is not connected to an authentication service.
+            </p>
+          </form>
+
+          <div class="divider my-0"></div>
+          <p class="text-center text-sm text-base-content/70">
+            New to Goodform?
+            <a href="./signup.html" class="link link-primary">Create an account</a>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      document.querySelector("#login-form").addEventListener("submit", (event) => {
+        event.preventDefault();
+        document.querySelector("#login-message").textContent =
+          "Sign-in is not configured yet. Connect an authentication service to continue.";
+      });
+    </script>
+  </body>
+</html>
