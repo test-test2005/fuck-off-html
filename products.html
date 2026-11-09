@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="en" data-theme="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Browse the Goodform collection by category." />
+    <title>Shop all products | Goodform</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="flex min-h-screen flex-col bg-base-200 text-base-content">
+    <header>
+      <!-- Main navigation -->
+      <nav aria-label="Main navigation" class="navbar bg-base-100 px-4 shadow-sm sm:px-8">
+        <div class="navbar-start">
+          <a href="./index.html" class="btn btn-ghost text-xl font-bold tracking-tight">goodform</a>
+        </div>
+
+        <!-- Desktop navigation links -->
+        <div class="navbar-center hidden md:flex">
+          <ul class="menu menu-horizontal px-1">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./products.html" aria-current="page">Products</a></li>
+            <li><a href="./about.html">About</a></li>
+          </ul>
+        </div>
+
+        <div class="navbar-end gap-2">
+          <a
+            href="./cart.html"
+            class="btn btn-ghost btn-circle"
+            aria-label="Shopping cart, 0 items"
+          >
+            <span class="indicator">
+              <span aria-hidden="true" id="cart-count" class="indicator-item badge badge-primary badge-sm">0</span>
+              <img src="./assets/cart.svg" alt="" class="size-5" aria-hidden="true" />
+            </span>
+          </a>
+          <a href="mailto:hello@goodform.studio" class="btn btn-primary hidden sm:inline-flex">
+            Get in touch
+          </a>
+          <details class="dropdown dropdown-end md:hidden">
+            <summary class="btn btn-ghost btn-square list-none" aria-label="Navigation menu">
+              <img src="./assets/menu.svg" alt="" class="size-6" aria-hidden="true" />
+            </summary>
+            <!-- Mobile navigation links -->
+            <ul class="menu dropdown-content z-10 mt-3 w-56 rounded-box bg-base-100 p-2 shadow">
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./products.html" aria-current="page">Products</a></li>
+              <li><a href="./about.html">About</a></li>
+              <li class="sm:hidden">
+                <a href="mailto:hello@goodform.studio" class="text-primary">Get in touch</a>
+              </li>
+            </ul>
+          </details>
+        </div>
+      </nav>
+    </header>
+    <!-- Breadcrumb trail -->
+    <nav aria-label="Breadcrumbs" class="mx-auto w-full max-w-6xl px-4 py-3 sm:px-8">
+      <div class="breadcrumbs text-sm">
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./products.html">Products</a></li>
+          <li aria-current="page"><span>Shop all</span></li>
+        </ul>
+      </div>
+    </nav>
+    <main class="mx-auto w-full max-w-7xl flex-1 px-4 py-8 sm:px-8 sm:py-12">
+      <header class="mb-8 flex flex-wrap items-end justify-between gap-4">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-primary">Goodform goods</p>
+          <h1 class="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">Shop all</h1>
+          <p class="mt-2 text-base-content/70">Thoughtful finds for everyday living.</p>
+        </div>
+      </header>
+
+      <div class="grid items-start gap-8 lg:grid-cols-[14rem_minmax(0,1fr)]">
+        <aside aria-label="Product categories">
+          <details class="collapse collapse-arrow bg-base-100 lg:hidden">
+            <summary class="collapse-title min-h-0 py-3 font-semibold">Categories</summary>
+            <div class="collapse-content">
+              <div class="flex flex-col gap-1" data-category-controls>
+                <button class="btn btn-ghost justify-between" data-category="all" aria-pressed="true">
+                  All products <span class="badge badge-sm">8</span>
+                </button>
+                <button class="btn btn-ghost justify-between" data-category="accessories" aria-pressed="false">
+                  Accessories <span class="badge badge-sm">1</span>
+                </button>
+                <button class="btn btn-ghost justify-between" data-category="bags" aria-pressed="false">
+                  Bags <span class="badge badge-sm">2</span>
+                </button>
+                <button class="btn btn-ghost justify-between" data-category="footwear" aria-pressed="false">
+                  Footwear <span class="badge badge-sm">1</span>
+                </button>
+                <button class="btn btn-ghost justify-between" data-category="tech" aria-pressed="false">
+                  Tech <span class="badge badge-sm">2</span>
+                </button>
+                <button class="btn btn-ghost justify-between" data-category="home" aria-pressed="false">
+                  Home <span class="badge badge-sm">2</span>
+                </button>
+              </div>
+            </div>
+          </details>
+
+          <div class="hidden rounded-box bg-base-100 p-4 lg:block">
+            <h2 class="px-3 pb-3 font-semibold">Categories</h2>
+            <div class="flex flex-col gap-1" data-category-controls>
+              <button class="btn btn-ghost justify-between" data-category="all" aria-pressed="true">
+                All products <span class="badge badge-sm">8</span>
+              </button>
+              <button class="btn btn-ghost justify-between" data-category="accessories" aria-pressed="false">
+                Accessories <span class="badge badge-sm">1</span>
+              </button>
+              <button class="btn btn-ghost justify-between" data-category="bags" aria-pressed="false">
+                Bags <span class="badge badge-sm">2</span>
+              </button>
+              <button class="btn btn-ghost justify-between" data-category="footwear" aria-pressed="false">
+                Footwear <span class="badge badge-sm">1</span>
+              </button>
+              <button class="btn btn-ghost justify-between" data-category="tech" aria-pressed="false">
+                Tech <span class="badge badge-sm">2</span>
+              </button>
+              <button class="btn btn-ghost justify-between" data-category="home" aria-pressed="false">
+                Home <span class="badge badge-sm">2</span>
+              </button>
+            </div>
+          </div>
+        </aside>
+
+        <section aria-label="Products">
+          <div class="mb-4 flex flex-wrap items-center justify-between gap-3">
+            <p id="results-count" class="text-sm text-base-content/65" aria-live="polite">
+              Showing 8 products
+            </p>
+            <label class="flex items-center gap-2 text-sm">
+              <span>Sort by</span>
+              <select id="sort-products" class="select select-bordered select-sm">
+                <option value="featured">Featured</option>
+                <option value="price-low">Price: low to high</option>
+                <option value="price-high">Price: high to low</option>
+                <option value="name">Name</option>
+              </select>
+            </label>
+          </div>
+
+          <div id="product-grid" class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            <article class="card product-card overflow-hidden bg-base-100 shadow-sm transition duration-300 ease-out hover:-translate-y-1 hover:shadow-xl motion-reduce:transition-none" data-product-id="classic-watch" data-category="accessories" data-price="89" data-name="Classic watch">
+              <a href="./product-details.html" aria-label="View Classic watch details">
+              <figure class="relative aspect-square overflow-hidden bg-base-300">
+                <img src="./assets/imges/classic-watch.jpg" alt="Minimalist watch with a white face and dark strap" class="h-full w-full object-cover transition-transform duration-500 ease-out hover:scale-105 motion-reduce:transition-none" />
+                <span class="badge badge-primary absolute left-3 top-3">Bestseller</span>
+              </figure>
+              </a>
+              <div class="card-body gap-3 p-4">
+                <div>
+                  <h2 class="card-title text-base"><a href="./product-details.html">Classic watch</a></h2>
+                  <p class="mt-1 text-sm text-base-content/65">Stainless steel · Silver</p>
+                </div>
+                <div class="flex items-center gap-2" aria-label="Rated 4.8 out of 5">
+                  <div class="rating rating-xs" aria-hidden="true"><input type="radio" class="mask mask-star-2 bg-warning" checked disabled /><input type="radio" class="mask mask-star-2 bg-warning" checked disabled /><input type="radio" class="mask mask-star-2 bg-warning" checked disabled /><input type="radio" class="mask mask-star-2 bg-warning" checked disabled /><input type="radio" class="mask mask-star-2 bg-warning" checked disabled /></div>
+                  <span class="text-xs text-base-content/60">4.8</span>
+                  <p class="ml-auto font-bold">$89.00</p>
+                </div>
+                <div class="mt-1 grid gap-2">
+                  <button type="button" class="btn btn-primary btn-sm" data-add-to-cart="Classic watch">Add to cart</button>
+                  <a href="/checkout?product=classic-watch&quantity=1" class="btn btn-outline btn-sm">Buy now</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="card product-card overflow-hidden bg-base-100 shadow-sm transition duration-300 ease-out hover:-translate-y-1 hover:shadow-xl motion-reduce:transition-none" data-product-id="everyday-tote" data-category="bags" data-price="64" data-name="Everyday tote">
+              <a href="./product-details.html" aria-label="View Everyday tote details">
+              <figure class="relative aspect-square overflow-hidden bg-base-300">
+                <img src="./assets/imges/everyday-tote.jpg" alt="Structured leather handbag in a warm neutral color" class="h-full w-full object-cover transition-transform duration-500 ease-out hover:scale-105 motion-reduce:transition-none" />
+                <span class="badge badge-secondary absolute left-3 top-3">New</span>
+              </figure>
+              </a>
+              <div class="card-body gap-3 p-4">
+                <div>
+                  <h2 class="card-title text-base"><a href="./product-details.html">Everyday tote</a></h2>
+                  <p class="mt-1 text-sm text-base-content/65">Soft vegan leather · Sand</p>
+                </div>
+                <div class="flex items-center gap-2" aria-label="Rated 4.9 out of 5">
+                  <div class="rating rating-xs" aria-hidden="true"><input type="radio" class="mask mask-star-2 bg-warning" checked disabled /><input type="radio" class="mask mask-star-2 bg-warning" checked disabled /><input type="radio" class="mask mask-star-2 bg-warning" checked disabled /><input type="radio" class="mask mask-star-2 bg-warning" checked disabled /><input type="radio" class="mask mask-star-2 bg-warning" checked disabled /></div>
+                  <span class="text-xs text-base-content/60">4.9</span>
+                  <p class="ml-auto font-bold">$64.00</p>
+                </div>
+                <div class="mt-1 grid gap-2">
+                  <button type="button" class="btn btn-primary btn-sm" data-add-to-cart="Everyday tote">Add to cart</button>
+                  <a href="/checkout?product=everyday-tote&quantity=1" class="btn btn-outline btn-sm">Buy now</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="card product-card overflow-hidden bg-base-100 shadow-sm transition duration-300 ease-out hover:-translate-y-1 hover:shadow-xl motion-reduce:transition-none" data-product-id="essential-sneaker" data-category="footwear" data-price="78" data-name="Essential sneaker">
+              <a href="./product-details.html" aria-label="View Essential sneaker details">
+              <figure class="relative aspect-square overflow-hidden bg-base-300">
+                <img src="./assets/imges/essential-sneaker.jpg" alt="Red low-top athletic sneaker" class="h-full w-full object-cover transition-transform duration-500 ease-out hover:scale-105 motion-reduce:transition-none" />
+                <span class="badge badge-outline absolute left-3 top-3 bg-base-100/90">Limited</span>
+              </figure>
+              </a>
+              <div class="card-body gap-3 p-4">
+                <div>
+                  <h2 class="card-title text-base"><a href="./product-details.html">Essential sneaker</a></h2>
+                  <p class="mt-1 text-sm text-base-content/65">Recycled knit · Red</p>
+                </div>
+                <div class="flex items-center gap-2" aria-label="Rated 4.7 out of 5">
+                  <div class="rating rating-xs" aria-hidden="true"><input type="radio" class="mask mask-star-2 bg-warning" checked disabled /><input type="radio" class="mask mask-star-2 bg-warning" checked disabled /><input type="radio" class="mask mask-star-2 bg-warning" checked disabled /><input type="radio" class="mask mask-star-2 bg-warning" checked disabled /><input type="radio" class="mask mask-star-2 bg-warning" checked disabled /></div>
+                  <span class="text-xs text-base-content/60">4.7</span>
+                  <p class="ml-auto font-bold">$78.00</p>
+                </div>
+                <div class="mt-1 grid gap-2">
+                  <button type="button" class="btn btn-primary btn-sm" data-add-to-cart="Essential sneaker">Add to cart</button>
+                  <a href="/checkout?product=essential-sneaker&quantity=1" class="btn btn-outline btn-sm">Buy now</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="card product-card overflow-hidden bg-base-100 shadow-sm transition duration-300 ease-out hover:-translate-y-1 hover:shadow-xl motion-reduce:transition-none" data-product-id="film-camera" data-category="tech" data-price="112" data-name="35mm film camera">
+              <a href="./product-details.html" aria-label="View 35mm film camera details">
+              <figure class="relative aspect-square overflow-hidden bg-base-300">
+                <img src="./assets/imges/film-camera.jpg" alt="Classic silver and black film camera" class="h-full w-full object-cover transition-transform duration-500 ease-out hover:scale-105 motion-reduce:transition-none" />
+                <span class="badge badge-primary absolute left-3 top-3">Staff pick</span>
+              </figure>
+              </a>
+              <div class="card-body gap-3 p-4">
+                <div>
+                  <h2 class="card-title text-base"><a href="./product-details.html">35mm film camera</a></h2>
+                  <p class="mt-1 text-sm text-base-content/65">Reusable · Silver</p>
+                </div>
+                <div class="flex items-center gap-2" aria-label="Rated 4.8 out of 5">
+                  <div class="rating rating-xs" aria-hidden="true"><input type="radio" class="mask mask-star-2 bg-warning" checked disabled /><input type="radio" class="mask mask-star-2 bg-warning" checked disabled /><input type="radio" class="mask mask-star-2 bg-warning" checked disabled /><input type="radio" class="mask mask-star-2 bg-warning" checked disabled /><input type="radio" class="mask mask-star-2 bg-warning" checked disabled /></div>
+                  <span class="text-xs text-base-content/60">4.8</span>
+                  <p class="ml-auto font-bold">$112.00</p>
+                </div>
+                <div class="mt-1 grid gap-2">
+                  <button type="button" class="btn btn-primary btn-sm" data-add-to-cart="35mm film camera">Add to cart</button>
+                  <a href="/checkout?product=film-camera&quantity=1" class="btn btn-outline btn-sm">Buy now</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="card product-card overflow-hidden bg-base-100 shadow-sm transition duration-300 ease-out hover:-translate-y-1 hover:shadow-xl motion-reduce:transition-none" data-product-id="ceramic-mug" data-category="home" data-price="24" data-name="Everyday ceramic mug">
+              <a href="./product-details.html" aria-label="View Everyday ceramic mug details">
+              <figure class="relative aspect-square overflow-hidden bg-base-300">
+                <img src="./assets/imges/ceramic-mug.jpg" alt="Handmade ceramic mug in a warm neutral glaze" class="h-full w-full object-cover transition-transform duration-500 ease-out hover:scale-105 motion-reduce:transition-none" />
+                <span class="badge badge-secondary absolute left-3 top-3">Hand finished</span>
+              </figure>
+              </a>
+              <div class="card-body gap-3 p-4">
+                <div>
+                  <h2 class="card-title text-base"><a href="./product-details.html">Everyday ceramic mug</a></h2>
+                  <p class="mt-1 text-sm text-base-content/65">Stoneware · Oat</p>
+                </div>
+                <div class="flex items-center gap-2" aria-label="Rated 4.9 out of 5">
+                  <div class="rating rating-xs" aria-hidden="true"><input type="radio" class="mask mask-star-2 bg-warning" checked disabled /><input type="radio" class="mask mask-star-2 bg-warning" checked disabled /><input type="radio" class="mask mask-star-2 bg-warning" checked disabled /><input type="radio" class="mask mask-star-2 bg-warning" checked disabled /><input type="radio" class="mask mask-star-2 bg-warning" checked disabled /></div>
+                  <span class="text-xs text-base-content/60">4.9</span>
+                  <p class="ml-auto font-bold">$24.00</p>
+                </div>
+                <div class="mt-1 grid gap-2">
+                  <button type="button" class="btn btn-primary btn-sm" data-add-to-cart="Everyday ceramic mug">Add to cart</button>
+                  <a href="/checkout?product=ceramic-mug&quantity=1" class="btn btn-outline btn-sm">Buy now</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="card product-card overflow-hidden bg-base-100 shadow-sm transition duration-300 ease-out hover:-translate-y-1 hover:shadow-xl motion-reduce:transition-none" data-product-id="table-lamp" data-category="home" data-price="96" data-name="Sunday table lamp">
+              <a href="./product-details.html" aria-label="View Sunday table lamp details">
+              <figure class="relative aspect-square overflow-hidden bg-base-300">
+                <img src="./assets/imges/table-lamp.jpg" alt="Sculptural table lamp with a soft ambient glow" class="h-full w-full object-cover transition-transform duration-500 ease-out hover:scale-105 motion-reduce:transition-none" />
+                <span class="badge badge-primary absolute left-3 top-3">Staff pick</span>
+              </figure>
+              </a>
+              <div class="card-body gap-3 p-4">
+                <div>
+                  <h2 class="card-title text-base"><a href="./product-details.html">Sunday table lamp</a></h2>
+                  <p class="mt-1 text-sm text-base-content/65">Powder-coated steel · Olive</p>
+                </div>
+                <div class="flex items-center gap-2" aria-label="Rated 4.8 out of 5">
+                  <div class="rating rating-xs" aria-hidden="true"><input type="radio" class="mask mask-star-2 bg-warning" checked disabled /><input type="radio" class="mask mask-star-2 bg-warning" checked disabled /><input type="radio" class="mask mask-star-2 bg-warning" checked disabled /><input type="radio" class="mask mask-star-2 bg-warning" checked disabled /><input type="radio" class="mask mask-star-2 bg-warning" checked disabled /></div>
+                  <span class="text-xs text-base-content/60">4.8</span>
+                  <p class="ml-auto font-bold">$96.00</p>
+                </div>
+                <div class="mt-1 grid gap-2">
+                  <button type="button" class="btn btn-primary btn-sm" data-add-to-cart="Sunday table lamp">Add to cart</button>
+                  <a href="/checkout?product=table-lamp&quantity=1" class="btn btn-outline btn-sm">Buy now</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="card product-card overflow-hidden bg-base-100 shadow-sm transition duration-300 ease-out hover:-translate-y-1 hover:shadow-xl motion-reduce:transition-none" data-product-id="canvas-backpack" data-category="bags" data-price="72" data-name="Canvas daypack">
+              <a href="./product-details.html" aria-label="View Canvas daypack details">
+              <figure class="relative aspect-square overflow-hidden bg-base-300">
+                <img src="./assets/imges/canvas-daypack.jpg" alt="Durable canvas backpack in a neutral color" class="h-full w-full object-cover transition-transform duration-500 ease-out hover:scale-105 motion-reduce:transition-none" />
+                <span class="badge badge-outline absolute left-3 top-3 bg-base-100/90">Everyday carry</span>
+              </figure>
+              </a>
+              <div class="card-body gap-3 p-4">
+                <div>
+                  <h2 class="card-title text-base"><a href="./product-details.html">Canvas daypack</a></h2>
+                  <p class="mt-1 text-sm text-base-content/65">Recycled canvas · Olive</p>
+                </div>
+                <div class="flex items-center gap-2" aria-label="Rated 4.7 out of 5">
+                  <div class="rating rating-xs" aria-hidden="true"><input type="radio" class="mask mask-star-2 bg-warning" checked disabled /><input type="radio" class="mask mask-star-2 bg-warning" checked disabled /><input type="radio" class="mask mask-star-2 bg-warning" checked disabled /><input type="radio" class="mask mask-star-2 bg-warning" checked disabled /><input type="radio" class="mask mask-star-2 bg-warning" checked disabled /></div>
+                  <span class="text-xs text-base-content/60">4.7</span>
+                  <p class="ml-auto font-bold">$72.00</p>
+                </div>
+                <div class="mt-1 grid gap-2">
+                  <button type="button" class="btn btn-primary btn-sm" data-add-to-cart="Canvas daypack">Add to cart</button>
+                  <a href="/checkout?product=canvas-backpack&quantity=1" class="btn btn-outline btn-sm">Buy now</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="card product-card overflow-hidden bg-base-100 shadow-sm transition duration-300 ease-out hover:-translate-y-1 hover:shadow-xl motion-reduce:transition-none" data-product-id="wireless-headphones" data-category="tech" data-price="129" data-name="Studio headphones">
+              <a href="./product-details.html" aria-label="View Studio headphones details">
+              <figure class="relative aspect-square overflow-hidden bg-base-300">
+                <img src="./assets/imges/studio-headphones.jpg" alt="Over-ear wireless headphones in black" class="h-full w-full object-cover transition-transform duration-500 ease-out hover:scale-105 motion-reduce:transition-none" />
+                <span class="badge badge-primary absolute left-3 top-3">New</span>
+              </figure>
+              </a>
+              <div class="card-body gap-3 p-4">
+                <div>
+                  <h2 class="card-title text-base"><a href="./product-details.html">Studio headphones</a></h2>
+                  <p class="mt-1 text-sm text-base-content/65">Wireless · Graphite</p>
+                </div>
+                <div class="flex items-center gap-2" aria-label="Rated 4.8 out of 5">
+                  <div class="rating rating-xs" aria-hidden="true"><input type="radio" class="mask mask-star-2 bg-warning" checked disabled /><input type="radio" class="mask mask-star-2 bg-warning" checked disabled /><input type="radio" class="mask mask-star-2 bg-warning" checked disabled /><input type="radio" class="mask mask-star-2 bg-warning" checked disabled /><input type="radio" class="mask mask-star-2 bg-warning" checked disabled /></div>
+                  <span class="text-xs text-base-content/60">4.8</span>
+                  <p class="ml-auto font-bold">$129.00</p>
+                </div>
+                <div class="mt-1 grid gap-2">
+                  <button type="button" class="btn btn-primary btn-sm" data-add-to-cart="Studio headphones">Add to cart</button>
+                  <a href="/checkout?product=wireless-headphones&quantity=1" class="btn btn-outline btn-sm">Buy now</a>
+                </div>
+              </div>
+            </article>
+          </div>
+          <p id="cart-message" class="mt-3 text-sm text-success" aria-live="polite"></p>
+          <p id="cart-error" class="alert alert-error mt-3 hidden" role="alert"></p>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer footer-horizontal footer-center mt-auto bg-base-300 p-8 text-base-content sm:p-10">
+      <nav aria-label="Footer navigation">
+        <div class="grid grid-flow-col gap-6">
+          <a href="./about.html" class="link link-hover">About us</a>
+          <a href="./products.html" class="link link-hover">Our work</a>
+          <a href="mailto:hello@goodform.studio" class="link link-hover">Contact</a>
+        </div>
+      </nav>
+      <nav aria-label="Social links">
+        <div class="grid grid-flow-col gap-4">
+          <a href="https://www.instagram.com/" aria-label="Instagram" class="link link-hover">Instagram</a>
+          <a href="https://www.linkedin.com/" aria-label="LinkedIn" class="link link-hover">LinkedIn</a>
+        </div>
+      </nav>
+      <aside>
+        <p>© 2026 Goodform Studio. Made with care.</p>
+      </aside>
+    </footer>
+
+    <script>
+      const productGrid = document.querySelector("#product-grid");
+      const products = [...productGrid.querySelectorAll(".product-card")];
+      const resultsCount = document.querySelector("#results-count");
+      const cartCount = document.querySelector("#cart-count");
+      const cartMessage = document.querySelector("#cart-message");
+      const cartError = document.querySelector("#cart-error");
+      const cartStorageKey = "goodform-cart";
+      let activeCategory = "all";
+
+      function readCart() {
+        const savedCart = localStorage.getItem(cartStorageKey);
+        const cart = savedCart ? JSON.parse(savedCart) : [];
+        if (!Array.isArray(cart)) {
+          throw new Error("Saved cart data is invalid.");
+        }
+        return cart.filter(
+          (item) =>
+            item &&
+            typeof item.id === "string" &&
+            products.some((product) => product.dataset.productId === item.id) &&
+            Number.isInteger(item.quantity) &&
+            item.quantity > 0
+        );
+      }
+
+      function updateCartCount() {
+        const count = readCart().reduce((total, item) => total + item.quantity, 0);
+        cartCount.textContent = count;
+        cartCount.parentElement.parentElement.setAttribute(
+          "aria-label",
+          `Shopping cart, ${count} ${count === 1 ? "item" : "items"}`
+        );
+      }
+
+      function updateProducts() {
+        const visibleProducts = products.filter((product) => {
+          const visible = activeCategory === "all" || product.dataset.category === activeCategory;
+          product.hidden = !visible;
+          return visible;
+        });
+
+        resultsCount.textContent = `Showing ${visibleProducts.length} ${
+          visibleProducts.length === 1 ? "product" : "products"
+        }`;
+
+        const sort = document.querySelector("#sort-products").value;
+        const sortedProducts = [...products];
+        if (sort === "price-low") sortedProducts.sort((a, b) => Number(a.dataset.price) - Number(b.dataset.price));
+        if (sort === "price-high") sortedProducts.sort((a, b) => Number(b.dataset.price) - Number(a.dataset.price));
+        if (sort === "name") sortedProducts.sort((a, b) => a.dataset.name.localeCompare(b.dataset.name));
+        sortedProducts.forEach((product) => productGrid.append(product));
+      }
+
+      document.querySelectorAll("[data-category-controls]").forEach((group) => {
+        group.addEventListener("click", (event) => {
+          const button = event.target.closest("[data-category]");
+          if (!button) return;
+
+          activeCategory = button.dataset.category;
+          document.querySelectorAll("[data-category]").forEach((categoryButton) => {
+            categoryButton.setAttribute(
+              "aria-pressed",
+              String(categoryButton.dataset.category === activeCategory)
+            );
+          });
+          updateProducts();
+        });
+      });
+
+      document.querySelector("#sort-products").addEventListener("change", updateProducts);
+
+      document.querySelectorAll("[data-add-to-cart]").forEach((button) => {
+        button.addEventListener("click", () => {
+          try {
+            const product = button.closest(".product-card");
+            const cart = readCart();
+            const existingItem = cart.find((item) => item.id === product.dataset.productId);
+            if (existingItem) {
+              existingItem.quantity += 1;
+            } else {
+              cart.push({ id: product.dataset.productId, quantity: 1 });
+            }
+
+            localStorage.setItem("goodform-cart", JSON.stringify(cart));
+            updateCartCount();
+            button.textContent = "Added to cart";
+            button.classList.replace("btn-primary", "btn-success");
+            cartMessage.textContent = `${button.dataset.addToCart} added to your cart.`;
+            cartError.classList.add("hidden");
+          } catch (error) {
+            cartError.textContent = `Unable to update your cart: ${error.message}`;
+            cartError.classList.remove("hidden");
+          }
+        });
+      });
+
+      window.addEventListener("storage", (event) => {
+        if (event.key === cartStorageKey) {
+          try {
+            updateCartCount();
+          } catch (error) {
+            cartError.textContent = `Unable to read your cart: ${error.message}`;
+            cartError.classList.remove("hidden");
+          }
+        }
+      });
+
+      try {
+        updateCartCount();
+      } catch (error) {
+        cartError.textContent = `Unable to read your cart: ${error.message}`;
+        cartError.classList.remove("hidden");
+      }
+    </script>
+  </body>
+</html>
