@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en" data-theme="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Review the items in your Goodform shopping bag." />
+    <title>Your cart | Goodform</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="flex min-h-screen flex-col bg-base-200 text-base-content">
+    <header>
+      <!-- Main navigation -->
+      <nav aria-label="Main navigation" class="navbar bg-base-100 px-4 shadow-sm sm:px-8">
+        <div class="navbar-start">
+          <a href="./products.html" class="btn btn-ghost text-xl font-bold tracking-tight">goodform</a>
+        </div>
+
+        <!-- Desktop navigation links -->
+        <div class="navbar-center hidden md:flex">
+          <ul class="menu menu-horizontal px-1">
+            <li><a href="./products.html">What we do</a></li>
+            <li><a href="./products.html">The studio</a></li>
+            <li><a href="./products.html">Notes</a></li>
+          </ul>
+        </div>
+
+        <div class="navbar-end gap-2">
+          <a
+            href="./cart.html"
+            class="btn btn-ghost btn-circle"
+            aria-label="Shopping cart, 0 items"
+          >
+            <span class="indicator">
+              <span id="header-cart-count" aria-hidden="true" class="indicator-item badge badge-primary badge-sm">0</span>
+              <img src="./assets/cart.svg" alt="" class="size-5" aria-hidden="true" />
+            </span>
+          </a>
+          <a href="mailto:hello@goodform.studio" class="btn btn-primary hidden sm:inline-flex">
+            Get in touch
+          </a>
+          <details class="dropdown dropdown-end md:hidden">
+            <summary class="btn btn-ghost btn-square list-none" aria-label="Navigation menu">
+              <img src="./assets/menu.svg" alt="" class="size-6" aria-hidden="true" />
+            </summary>
+            <!-- Mobile navigation links -->
+            <ul class="menu dropdown-content z-10 mt-3 w-56 rounded-box bg-base-100 p-2 shadow">
+              <li><a href="./products.html">What we do</a></li>
+              <li><a href="./products.html">The studio</a></li>
+              <li><a href="./products.html">Notes</a></li>
+              <li class="sm:hidden">
+                <a href="mailto:hello@goodform.studio" class="text-primary">Get in touch</a>
+              </li>
+            </ul>
+          </details>
+        </div>
+      </nav>
+    </header>
+    <!-- Breadcrumb trail -->
+    <nav aria-label="Breadcrumbs" class="mx-auto w-full max-w-6xl px-4 py-3 sm:px-8">
+      <div class="breadcrumbs text-sm">
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./products.html">Products</a></li>
+          <li aria-current="page"><span>Shopping cart</span></li>
+        </ul>
+      </div>
+    </nav>
+    <main class="mx-auto w-full max-w-6xl flex-1 px-4 py-8 sm:px-8 sm:py-12">
+      <div class="mb-8 flex flex-wrap items-end justify-between gap-3">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-primary">Your selection</p>
+          <h1 class="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">Shopping cart</h1>
+        </div>
+        <p id="item-count" class="text-sm text-base-content/65" aria-live="polite">0 items</p>
+      </div>
+
+      <p id="cart-error" class="alert alert-error mb-6 hidden" role="alert"></p>
+
+      <div id="cart-layout" class="grid items-start gap-8 lg:grid-cols-[1fr_21rem]">
+        <section aria-label="Cart items" class="divide-y divide-base-300 rounded-box bg-base-100 px-4 sm:px-6">
+          <div id="cart-items" class="divide-y divide-base-300"></div>
+
+          <div id="empty-cart" class="hidden py-14 text-center">
+            <h2 class="text-xl font-semibold">Your cart is empty</h2>
+            <p class="mt-2 text-sm text-base-content/65">Take a look around and find something you love.</p>
+            <a href="./products.html" class="btn btn-primary mt-6">Explore the collection</a>
+          </div>
+        </section>
+
+        <aside id="order-summary" aria-labelledby="summary-heading" class="card bg-base-100 shadow-sm">
+          <div class="card-body">
+            <h2 id="summary-heading" class="card-title">Order summary</h2>
+            <div class="mt-2 space-y-3 text-sm">
+              <div class="flex justify-between gap-4">
+                <span class="text-base-content/70">Subtotal</span>
+                <span id="subtotal" class="font-medium">$0.00</span>
+              </div>
+              <div class="flex justify-between gap-4">
+                <span class="text-base-content/70">Shipping</span>
+                <span id="shipping" class="font-medium">Free</span>
+              </div>
+              <p class="text-xs text-base-content/60">Taxes calculated at checkout.</p>
+            </div>
+            <div class="divider my-1"></div>
+            <div class="flex justify-between gap-4">
+              <span class="font-semibold">Total</span>
+              <span id="total" class="font-bold">$0.00</span>
+            </div>
+            <a href="/checkout" class="btn btn-primary mt-3 w-full">Continue to checkout</a>
+            <p class="mt-2 text-center text-xs text-base-content/60">Secure checkout · Free shipping over $75</p>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="footer footer-horizontal footer-center mt-auto bg-base-300 p-8 text-base-content sm:p-10">
+      <nav aria-label="Footer navigation">
+        <div class="grid grid-flow-col gap-6">
+          <a href="./products.html" class="link link-hover">About us</a>
+          <a href="./products.html" class="link link-hover">Our work</a>
+          <a href="mailto:hello@goodform.studio" class="link link-hover">Contact</a>
+        </div>
+      </nav>
+      <nav aria-label="Social links">
+        <div class="grid grid-flow-col gap-4">
+          <a href="https://www.instagram.com/" aria-label="Instagram" class="link link-hover">Instagram</a>
+          <a href="https://www.linkedin.com/" aria-label="LinkedIn" class="link link-hover">LinkedIn</a>
+        </div>
+      </nav>
+      <aside>
+        <p>© 2026 Goodform Studio. Made with care.</p>
+      </aside>
+    </footer>
+
+    <script>
+      const cartStorageKey = "goodform-cart";
+      const money = new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+      });
+      const catalog = {
+        "classic-watch": {
+          name: "Classic watch",
+          description: "Stainless steel · Silver",
+          price: 89,
+          image: "./assets/imges/classic-watch.jpg",
+          alt: "Minimalist watch with a white face and dark strap",
+        },
+        "everyday-tote": {
+          name: "Everyday tote",
+          description: "Soft vegan leather · Sand",
+          price: 64,
+          image: "./assets/imges/everyday-tote.jpg",
+          alt: "Structured leather handbag in a warm neutral color",
+        },
+        "essential-sneaker": {
+          name: "Essential sneaker",
+          description: "Recycled knit · Red",
+          price: 78,
+          image: "./assets/imges/essential-sneaker.jpg",
+          alt: "Red low-top athletic sneaker",
+        },
+        "film-camera": {
+          name: "35mm film camera",
+          description: "Reusable · Silver",
+          price: 112,
+          image: "./assets/imges/film-camera.jpg",
+          alt: "Classic silver and black film camera",
+        },
+        "ceramic-mug": {
+          name: "Everyday ceramic mug",
+          description: "Stoneware · Oat",
+          price: 24,
+          image: "./assets/imges/ceramic-mug.jpg",
+          alt: "Handmade ceramic mug in a warm neutral glaze",
+        },
+        "table-lamp": {
+          name: "Sunday table lamp",
+          description: "Powder-coated steel · Olive",
+          price: 96,
+          image: "./assets/imges/table-lamp.jpg",
+          alt: "Sculptural table lamp with a soft ambient glow",
+        },
+        "canvas-backpack": {
+          name: "Canvas daypack",
+          description: "Recycled canvas · Olive",
+          price: 72,
+          image: "./assets/imges/canvas-daypack.jpg",
+          alt: "Durable canvas backpack in a neutral color",
+        },
+        "wireless-headphones": {
+          name: "Studio headphones",
+          description: "Wireless · Graphite",
+          price: 129,
+          image: "./assets/imges/studio-headphones.jpg",
+          alt: "Over-ear wireless headphones in black",
+        },
+      };
+      const cartItemsElement = document.querySelector("#cart-items");
+      const cartError = document.querySelector("#cart-error");
+
+      function readCart() {
+        const savedCart = localStorage.getItem(cartStorageKey);
+        const parsedCart = savedCart ? JSON.parse(savedCart) : [];
+        if (!Array.isArray(parsedCart)) {
+          throw new Error("Saved cart data is invalid.");
+        }
+        return parsedCart.filter(
+          (item) =>
+            item &&
+            Object.hasOwn(catalog, item.id) &&
+            Number.isInteger(item.quantity) &&
+            item.quantity > 0
+        );
+      }
+
+      function renderCartItems() {
+        cartItemsElement.replaceChildren();
+
+        cart.forEach((item) => {
+          const product = catalog[item.id];
+          const article = document.createElement("article");
+          article.className = "cart-item flex gap-4 py-5 sm:gap-6";
+          article.innerHTML = `
+            <img src="${product.image}" alt="${product.alt}" class="size-24 rounded-box object-cover sm:size-28" />
+            <div class="flex min-w-0 flex-1 flex-col justify-between gap-3 sm:flex-row sm:items-center">
+              <div>
+                <h2 class="font-semibold">${product.name}</h2>
+                <p class="mt-1 text-sm text-base-content/65">${product.description}</p>
+                <p class="mt-2 text-sm font-medium sm:hidden">${money.format(product.price)} each</p>
+              </div>
+              <div class="flex items-center justify-between gap-4 sm:justify-end sm:gap-8">
+                <div class="join" aria-label="Quantity for ${product.name}">
+                  <button type="button" class="btn btn-sm join-item" data-quantity-change="-1" aria-label="Decrease ${product.name} quantity">−</button>
+                  <span class="btn btn-sm join-item pointer-events-none quantity-value" aria-live="polite">${item.quantity}</span>
+                  <button type="button" class="btn btn-sm join-item" data-quantity-change="1" aria-label="Increase ${product.name} quantity">+</button>
+                </div>
+                <p class="hidden w-20 text-right text-sm font-semibold sm:block line-total">${money.format(product.price * item.quantity)}</p>
+                <button type="button" class="btn btn-ghost btn-sm text-base-content/60" data-remove aria-label="Remove ${product.name}">Remove</button>
+              </div>
+            </div>`;
+          article.dataset.productId = item.id;
+          article.dataset.quantity = item.quantity;
+          cartItemsElement.append(article);
+          article.querySelector('[data-quantity-change="-1"]').disabled = item.quantity <= 1;
+        });
+      }
+
+      let cart = [];
+
+      function updateCart() {
+        renderCartItems();
+        const itemCount = cart.reduce((total, item) => total + item.quantity, 0);
+        const subtotal = cart.reduce(
+          (total, item) => total + catalog[item.id].price * item.quantity,
+          0
+        );
+        const shipping = subtotal === 0 || subtotal >= 75 ? 0 : 6;
+
+        document.querySelector("#item-count").textContent =
+          `${itemCount} ${itemCount === 1 ? "item" : "items"}`;
+        const cartLink = document.querySelector('[aria-label^="Shopping cart"]');
+        document.querySelector("#header-cart-count").textContent = itemCount;
+        cartLink.setAttribute(
+          "aria-label",
+          `Shopping cart, ${itemCount} ${itemCount === 1 ? "item" : "items"}`
+        );
+        document.querySelector("#subtotal").textContent = money.format(subtotal);
+        document.querySelector("#shipping").textContent =
+          shipping === 0 ? "Free" : money.format(shipping);
+        document.querySelector("#total").textContent = money.format(subtotal + shipping);
+
+        const isEmpty = cart.length === 0;
+        document.querySelector("#empty-cart").classList.toggle("hidden", !isEmpty);
+        document.querySelector("#order-summary").classList.toggle("hidden", isEmpty);
+      }
+
+      function saveCart(nextCart) {
+        try {
+          localStorage.setItem(cartStorageKey, JSON.stringify(nextCart));
+          cart = nextCart;
+          cartError.classList.add("hidden");
+          updateCart();
+        } catch (error) {
+          cartError.textContent = `Unable to save your cart: ${error.message}`;
+          cartError.classList.remove("hidden");
+        }
+      }
+
+      cartItemsElement.addEventListener("click", (event) => {
+        const button = event.target.closest("[data-quantity-change], [data-remove]");
+        if (!button) return;
+
+        const productId = button.closest(".cart-item").dataset.productId;
+        let nextCart;
+        if (button.hasAttribute("data-remove")) {
+          nextCart = cart.filter((item) => item.id !== productId);
+        } else {
+          nextCart = cart.map((item) => {
+            if (item.id !== productId) return item;
+            return {
+              ...item,
+              quantity: Math.max(1, item.quantity + Number(button.dataset.quantityChange)),
+            };
+          });
+        }
+        saveCart(nextCart);
+      });
+
+      window.addEventListener("storage", (event) => {
+        if (event.key !== cartStorageKey) return;
+        try {
+          cart = readCart();
+          updateCart();
+        } catch (error) {
+          cartError.textContent = `Unable to read your cart: ${error.message}`;
+          cartError.classList.remove("hidden");
+        }
+      });
+
+      try {
+        cart = readCart();
+        updateCart();
+      } catch (error) {
+        cartError.textContent = `Unable to read your cart: ${error.message}`;
+        cartError.classList.remove("hidden");
+      }
+    </script>
+  </body>
+</html>
