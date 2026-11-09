@@ -7,21 +7,18 @@ List branches (* marks the current branch):
 
 Switch branches:
   git switch main
-  git switch main-with-project
+  git switch org
 
-The main branch is intentionally empty. The complete storefront is preserved
-on main-with-project.
+The org branch is intentionally empty. The complete storefront is on main.
 
 Create a feature branch from the storefront:
-  git switch -c my-feature main-with-project
+  git switch -c my-feature main
 
 Merge a branch into the current branch:
-  git switch main-with-project
+  git switch main
   git merge my-feature
 
-Merging a branch into main adds its files to main, so main will no longer be
-empty. The page branches already form a history that is included in
-main-with-project.
+The page branches are already included in main.
 
 Ignore files
 ------------
