@@ -1,0 +1,48 @@
+GOODFORM PROJECT - GIT COMMANDS
+
+Branches
+--------
+List branches (* marks the current branch):
+  git branch
+
+Switch branches:
+  git switch main
+  git switch main-with-project
+
+The main branch is intentionally empty. The complete storefront is preserved
+on main-with-project.
+
+Create a feature branch from the storefront:
+  git switch -c my-feature main-with-project
+
+Merge a branch into the current branch:
+  git switch main-with-project
+  git merge my-feature
+
+Merging a branch into main adds its files to main, so main will no longer be
+empty. The page branches already form a history that is included in
+main-with-project.
+
+Ignore files
+------------
+Add file patterns to .gitignore, for example:
+  echo "draft.txt" >> .gitignore
+
+.gitignore affects untracked files. To stop tracking a file but keep it on
+disk, use:
+  git rm --cached -- path/to/file
+
+Review and discard changes
+--------------------------
+Check the current state and inspect edits:
+  git status
+  git diff -- path/to/file
+
+Unstage a file but keep its edits:
+  git restore --staged -- path/to/file
+
+Discard uncommitted edits to a tracked file (permanent):
+  git restore -- path/to/file
+
+Before discarding work, use git status and git diff to confirm what will be
+lost.
